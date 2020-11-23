@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Space;
 use Illuminate\Http\Request;
 
 class SpaceController extends Controller
@@ -18,7 +19,8 @@ class SpaceController extends Controller
      */
     public function index()
     {
-        return view('pages.space.index');
+        $spaces = Space::orderBy('created_at', 'DESC')->paginate(4);
+        return view('pages.space.index', compact('spaces'));
     }
 
     /**
@@ -49,7 +51,7 @@ class SpaceController extends Controller
 
         $request->user()->spaces()->create($request->all());
 
-        return redirect()->route('space.index')->with('status', 'Space created!');
+        return redirect()->route('space.pages.index')->with('status', 'Space created!');
     }
 
     /**

@@ -5,20 +5,33 @@
     <x-space></x-space>
     <div class="row justify-content-center">
         <div class="col-md-8">
+            @if (session('status'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('status') }}
+                </div>
+            @endif
+            
+            @foreach ($spaces as $space)
             <div class="card">
-                <div class="card-header">{{ __('Space') }}</div>
-
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('This is space list page.') }}
+                    <h4 class="card-title">
+                        {{ $space->title }}
+                        <form action="#">
+                            @csrf @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm float-right ml-3">Delete</button>
+                            <a href="#" class="btn btn-info btn-sm float-right text-white ml-3">Edit</a>
+                        </form>
+                    </h4>
+                    <h6 class="card-subtitle">{{ $space->address }}</h6>
+                    <p class="card-text">{{ $space->description }}</p>
+                    <a href="#" class="card-link">Direction</a>
                 </div>
             </div>
+            @endforeach
         </div>
+    </div>
+    <div class="row justify-content-center">
+        {{ $spaces ?? ''->links() }}
     </div>
 </div>
 @endsection
