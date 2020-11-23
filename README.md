@@ -11,6 +11,7 @@
 
 Project Web Geolocation (Here Maps) with Laravel 7 on Homestead
 - Database: MariaDB/MySQL (codespace)
+
 *Note: Must be running on local https
 
 ## License
