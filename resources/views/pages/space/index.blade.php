@@ -16,11 +16,13 @@
                 <div class="card-body">
                     <h4 class="card-title">
                         {{ $space->title }}
+                        @if ($space->user_id == Auth::user()->id)
                         <form action="#">
                             @csrf @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm float-right ml-3">Delete</button>
-                            <a href="#" class="btn btn-info btn-sm float-right text-white ml-3">Edit</a>
+                            <a href="{{ route('space.edit', $space->id) }}" class="btn btn-info btn-sm float-right text-white ml-3">Edit</a>
                         </form>
+                        @endif
                     </h4>
                     <h6 class="card-subtitle">{{ $space->address }}</h6>
                     <p class="card-text">{{ $space->description }}</p>
