@@ -10,9 +10,16 @@
 ## About Laravel
 
 Project Web Geolocation (Here Maps) with Laravel 7 on Homestead
+
+*First step:
+- composer install
+- rename .env.example to .env (and configure it)
+- php artisan key:generate
+
+*Note
 - Database: MariaDB/MySQL (codespace)
 
-*Note: Must be running on local https
+*Must be running on local https
 
 ## License
 
