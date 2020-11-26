@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Submit My Space') }}</div>
+                <div class="card-header">Edit My Space</div>
 
                 <div class="card-body">
                     {!! Form::model($space, ['route' => ['space.update', $space->id], 'method' => 'put', 'files' => true]) !!}
