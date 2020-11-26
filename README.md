@@ -19,6 +19,10 @@ Project Web Geolocation (Here Maps) with Laravel 7 on Homestead
 *Note
 - Database: MariaDB/MySQL (codespace)
 
+*To fix directory permissions (on linux)
+- sudo chmod -R 777 public
+- sudo chmod -R 777 storage
+
 *Must be running on local https
 
 ## License
