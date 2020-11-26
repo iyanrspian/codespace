@@ -15,6 +15,7 @@ Project Web Geolocation (Here Maps) with Laravel 7 on Homestead
 - composer install
 - rename .env.example to .env (and configure it)
 - php artisan key:generate
+- php artisan storage:link
 
 *Note
 - Database: MariaDB/MySQL (codespace)
